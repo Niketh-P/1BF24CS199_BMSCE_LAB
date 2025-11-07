@@ -1,0 +1,99 @@
+import java.util.*;
+
+
+    abstract class Shapes{
+        int a,b;
+
+        Shapes(int a, int b){
+            this.a=a;
+            this.b=b;
+        }
+
+        abstract void printArea();
+
+    }
+
+    class Rectangle extends Shapes{
+    
+        Rectangle(int length, int width){
+            super(length, width);
+        }
+
+        void printArea(){
+            System.out.println("Area of Rectangle: "+ (a*b));
+
+        }
+
+    
+    }
+
+    class Triangle extends Shapes{
+
+        Triangle(int base, int height){
+            super(base,height);
+        }
+
+        void printArea(){
+            System.out.println("The area of the Triangle is: "+ (0.5*a*b));
+        }
+
+    }
+
+    class Circle extends Shapes{
+        Circle(int radius){
+            super(radius,0);
+        }
+        
+        void printArea(){
+            System.out.println("The area of the circle is: "+ (3.14*a*a));
+        }
+
+    }
+
+
+public class ShapeDemo{
+    public static void main(String[] args) {
+        int choice;
+        String a ="TRUE";
+        Scanner sc= new Scanner(System.in);
+        while(a=="TRUE"){
+            System.out.println("Enter the shape's name whose area is to be found");
+            System.out.println("1: Rectangle, 2: Triangle, 3:Circle ,4:Exit ");
+            choice=sc.nextInt();
+            switch (choice) {
+                case 1: 
+                    System.out.println("Enter the length and width:");
+                    int l,w;
+                    l=sc.nextInt();
+                    w=sc.nextInt();
+                    Shapes r1=new Rectangle(l, w);
+                    r1.printArea();
+                    break;
+                
+                case 2:
+                    System.out.println("Enter the base and height:");
+                    int b,h;
+                    b=sc.nextInt();
+                    h=sc.nextInt();
+                    Shapes t1=new Triangle(b, h);
+                    t1.printArea();
+                    break;
+
+                case 3:
+                    System.out.println("Enter the radius:");
+                    int r;
+                    r=sc.nextInt();
+                    Shapes c1=new Circle(r);
+                    c1.printArea();
+                    break;
+                case 4:
+                    return;
+            }
+        
+        }
+    }
+
+}
+
+    
+
