@@ -7,7 +7,7 @@
  */
 
 struct ListNode* removeElements(struct ListNode* head, int val) {
-    // Create a dummy node to handle deleting the head easily
+    
     struct ListNode* dummy = (struct ListNode*)malloc(sizeof(struct ListNode));
     dummy->next = head;
 
@@ -15,7 +15,7 @@ struct ListNode* removeElements(struct ListNode* head, int val) {
 
     while (current->next != NULL) {
         if (current->next->val == val) {
-            // Delete the node
+            
             struct ListNode* temp = current->next;
             current->next = current->next->next;
             free(temp);
