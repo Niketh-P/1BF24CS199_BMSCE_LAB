@@ -78,6 +78,9 @@ int main() {
 
             case 4:
                 exit(0);
+        }
+    }
+}
 
 
 //QUEUE IMPLEMENTATION
@@ -173,8 +176,4 @@ int main() {
     }
 }
 
-            default:
-                printf("Invalid Choice\n");
-        }
-    }
-}
+
